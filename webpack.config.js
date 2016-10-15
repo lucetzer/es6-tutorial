@@ -2,10 +2,14 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: ['babel-polyfill', './js/main.js'],
+    entry: {
+        polyfill: 'babel-polyfill',
+        app: './js/main.js',
+        ratefinder: './js/ratefinder.js'
+    },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'main.bundle.js'
+        filename: '[name].bundle.js'
     },
     module: {
         loaders: [
